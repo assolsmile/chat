@@ -1,3 +1,6 @@
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import * as actions from "./actions";
 import React, { Component } from 'react';
 import './App.scss';
 import Chat from "./components/chat/Chat";
@@ -10,11 +13,21 @@ class App extends Component {
           <h1>Chat</h1>
         </header>
         <body>
-          <Chat/>
+          <Chat { ...this.props }/>
         </body>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  messages: state.chat.messages,
+  currentUser: state.chat.currentUser
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
