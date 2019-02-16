@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Chat from "./chat/components/Chat";
+import Chat from "./components/chat/Chat";
 
 class App extends Component {
   render() {
