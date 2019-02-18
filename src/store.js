@@ -1,7 +1,7 @@
 import {applyMiddleware, compose, createStore} from "redux";
 import reducer from "./reducers";
 import createSagaMiddleware from "redux-saga";
-import sagas from './sagas';
+import sagas from './sagas/chat';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

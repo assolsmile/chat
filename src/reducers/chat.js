@@ -1,3 +1,5 @@
+import * as actionTypes from "../actions/actionTypes"
+
 const initialState = {
   messages: [
     {
@@ -22,6 +24,11 @@ const initialState = {
 
 const chat = (state = [], action) => {
   switch (action.type) {
+    case actionTypes.LOAD_ALL_SUCCESS:
+      return {
+        ...state,
+        messages: action.messages
+      };
     default:
       return initialState;
   }

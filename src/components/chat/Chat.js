@@ -4,9 +4,9 @@ import ChatInput from "../input/ChatInput"
 
 const Chat = ({ messages, currentUser}) => {
 
-  const cards = messages.map(item => {
-    const currentUserData = {...item, currentUser}
-    return <Card {...currentUserData}/>
+  const cards = messages.map((item, index)=> {
+    const currentUserData = {...item, currentUser};
+    return <Card key={index} {...currentUserData}/>
   })
   return (
     <div className='chat'>
