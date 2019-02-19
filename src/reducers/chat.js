@@ -5,17 +5,17 @@ const initialState = {
     {
       author: "Assel",
       timestamp: 333333333333333,
-      message: "SThanks"
+      message: "Hey! How are you?"
     },
     {
       author: "Rob",
       timestamp: 333333333333333,
-      message: "SThanks"
+      message: "I am fine!"
     },
     {
       author: "Rob",
       timestamp: 333333333333333,
-      message: "SThanks"
+      message: "And you?"
     },
 
   ],
