@@ -20,3 +20,13 @@ export const sendMessage = (author, message) => ({
   message
 });
 
+export const sendMessageSuccess = (message) => ({
+  type: actionTypes.SEND_MESSAGE_SUCCESS,
+  message
+});
+
+export const sendMessageError = (error) => ({
+  type: actionTypes.SEND_MESSAGE_ERROR,
+  error
+});
+

@@ -14,6 +14,20 @@ export function* loadAll() {
   }
 }
 
+export function* sendMessage(action) {
+  try {
+    const response = yield call(api.sendMessage(action));
+
+    yield put(
+      actions.sendMessageSuccess(response.data)
+    );
+  } catch (error) {
+    yield actions.sendMessageError(error)
+
+  }
+}
+
 export default function* sagas() {
   yield takeEvery(actionTypes.LOAD_ALL, loadAll);
+  yield takeEvery(actionTypes.SEND_MESSAGE, sendMessage);
 }

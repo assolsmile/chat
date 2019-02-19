@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({ author, message, timestamp, currentUser}) => {
 
-  const date = new Date().setMilliseconds(timestamp);
+  const date = new Date(timestamp);
   const messageClass = author === currentUser ? "chat__my-messages" : "chat__received-messages";
 
   return(

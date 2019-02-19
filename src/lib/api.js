@@ -14,6 +14,6 @@ export const sendMessage = ({message, author}) =>
     url: "/chatty/v1.0/",
     headers: {token: config.token},
     data: {message, author}
-  })
+  });
 
 export default api;

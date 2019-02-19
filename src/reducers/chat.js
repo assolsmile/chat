@@ -24,12 +24,21 @@ const initialState = {
 
 const chat = (state = [], action) => {
   switch (action.type) {
+    case actionTypes.LOAD_ALL:
+    case actionTypes.SEND_MESSAGE:
+      return state;
     case actionTypes.LOAD_ALL_SUCCESS:
       return {
         ...state,
         messages: action.messages
       };
+    case actionTypes.SEND_MESSAGE_SUCCESS:
+      return {
+        ...state,
+        messages: [...state.messages, action.message]
+      };
     default:
+      console.log(action);
       return initialState;
   }
 };
